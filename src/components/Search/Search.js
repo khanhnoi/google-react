@@ -3,9 +3,14 @@ import "./Search.css";
 import { Search as SearchIcon, Mic as MicIcon } from "@material-ui/icons";
 import { Button } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
+import { useStateValue } from "../../StateProvider";
+import { actionTypes } from "../../reducer";
 
 const Search = (props) => {
   const { hideButtons = false } = props;
+  // const state = {};
+  // const [state, dispatch] = useStateValue();
+  const [{}, dispatch] = useStateValue();
   const [input, setInput] = useState("");
   const history = useHistory();
   const handleBtnSearch = (e) => {
@@ -27,6 +32,11 @@ const Search = (props) => {
   };
   const searchFunc = (input) => {
     console.log(input);
+
+    dispatch({
+      type: actionTypes.SET_SEARCH_TERM,
+      term: input || "Khánh Nòi",
+    });
     history.push("/search");
   };
   return (
