@@ -101,11 +101,26 @@ const SearchPage = () => {
           <div className="searchPage__results">
             <p className="searchPage__resultsCount">
               About {data?.searchInformation?.totalResults} results (
-              {data?.searchInformation?.formattedSearchTime} seconds) for {term}
+              {data?.searchInformation?.formattedSearchTime} seconds) for "
+              {term}"
             </p>
             {data?.items.map((item) => (
               <div className="searchPage__result">
-                <a href={item?.link} className="searchPage__resultLink">
+                <a
+                  href={item?.link}
+                  className="searchPage__resultLink"
+                  target="_blank"
+                >
+                  {item?.displayLink} <ArrowDropDownIcon />
+                </a>
+                <a
+                  className="searchPage__resultTitle"
+                  href={item?.link}
+                  target="_blank"
+                >
+                  <h3>{item?.title}</h3>
+                </a>
+                <div className="searchPage__resultDescription">
                   {item?.pagemap?.cse_image?.length > 0 &&
                   item?.pagemap?.cse_image[0]?.src ? (
                     <img
@@ -116,13 +131,9 @@ const SearchPage = () => {
                   ) : (
                     ""
                   )}
-                  {item?.displayLink} <ArrowDropDownIcon />
-                </a>
-                <a className="searchPage__resultTitle" href={item?.link}>
-                  <h3>{item?.title}</h3>
-                </a>
 
-                <p className="searchPage__resultSnippet">{item?.snippet}</p>
+                  <p className="searchPage__resultSnippet">{item?.snippet}</p>
+                </div>
               </div>
             ))}
           </div>
