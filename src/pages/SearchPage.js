@@ -36,12 +36,12 @@ const SearchPage = () => {
   const { q } = parsed;
   const term = q;
   // console.log("term:  + term);
-  // const { data } = useGoogleSearch(term);
+  const { data } = useGoogleSearch(term);
   // console.log("Data: ");
   // console.log(data);
 
   //test Mock API CALL
-  const data = response;
+  // const data = response;
   //end test
 
   // google api
