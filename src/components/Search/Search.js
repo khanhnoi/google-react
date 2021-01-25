@@ -7,11 +7,12 @@ import { useStateValue } from "../../StateProvider";
 import { actionTypes } from "../../reducer";
 
 const Search = (props) => {
-  const { hideButtons = false } = props;
+  const { hideButtons = false, preValue } = props;
+  console.log("preValue:" + preValue);
   // const state = {};
   // const [state, dispatch] = useStateValue();
   const [{}, dispatch] = useStateValue();
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState(preValue || "");
   const history = useHistory();
   const handleBtnSearch = (e) => {
     e.preventDefault();

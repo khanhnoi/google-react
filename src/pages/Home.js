@@ -4,6 +4,8 @@ import { Apps as AppsIcon } from "@material-ui/icons";
 import { Avatar } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import Search from "./../components/Search/Search";
+import adminImg from "./../assets/admin/khanh-noi.jpg";
+import googleImg from "./../assets/images/googlelogo_color_92x30dp_khanh_noi.png";
 
 const Home = () => {
   return (
@@ -13,29 +15,39 @@ const Home = () => {
         <div className="home__header">
           <div className="home__headerLeft">
             {/* link1 */}
-            <Link to="about">About</Link>
+            <Link to="/">About</Link>
+            {/* <a
+              href="http://khanhnoi.mobie.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              About
+            </a> */}
             {/* link2 */}
-            <Link to="store">Store</Link>
+            <Link to="/">Store</Link>
           </div>
           <div className="home__headerRight">
             {/* link3 */}
-            <Link to="gmail">Gmail</Link>
+            <Link to="/">Gmail</Link>
             {/* link4 */}
-            <Link to="images">Images</Link>
+            <Link to="/">Images</Link>
             {/* icon */}
-            <AppsIcon />
+            <AppsIcon className="home__headerIcon" />
             {/* avatar */}
-            <Avatar />
+            <a
+              href="https://www.facebook.com/khanhnoiIT"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Avatar alt="Khánh Nòi" src={adminImg} />
+            </a>
           </div>
         </div>
         <div className="home__body">
-          <img
-            src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
-            alt="Google Fake by Khánh Nòi"
-          />
+          <img src={googleImg} alt="Google Fake by Khánh Nòi" />
 
           <div className="home__inputContainer">
-            <Search hideButtons />
+            <Search hideButtons={false} />
           </div>
         </div>
       </div>
