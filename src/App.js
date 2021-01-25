@@ -9,11 +9,12 @@ function App() {
     <div className="app">
       <Router>
         <Switch>
-          <Route path="/search">
+          {/* <Route path="/:term" exact> */}
+          <Route path={"/search"} exact>
             {/* This is The search */}
             <SearchPage />
           </Route>
-          <Route path="/">
+          <Route path="/" exact>
             {/* home */}
             <Home />
           </Route>

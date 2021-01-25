@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
+import queryString from "query-string";
 import { useStateValue } from "../StateProvider";
 import useGoogleSearch from "../useGoogleSearch";
 import "./SearchPage.css";
@@ -19,7 +20,22 @@ import Search from "../components/Search/Search";
 
 const SearchPage = () => {
   const [state, dispatch] = useStateValue();
-  const { term } = state;
+
+  //EX1 " Context
+  // const { term } = state;
+
+  //EX2: Params URL
+  // const { term } = useParams();
+  // console.log("URL: " + term);
+
+  //EX3: Query Parameters
+  const location = useLocation();
+  const parsed = queryString.parse(location.search);
+  // console.log("parsed: ");
+  // console.log(parsed.q);
+  const { q } = parsed;
+  const term = q;
+  // console.log("term:  + term);
   // const { data } = useGoogleSearch(term);
   // console.log("Data: ");
   // console.log(data);

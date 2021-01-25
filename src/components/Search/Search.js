@@ -8,7 +8,8 @@ import { actionTypes } from "../../reducer";
 
 const Search = (props) => {
   const { hideButtons = false, preValue } = props;
-  console.log("preValue:" + preValue);
+  const defaultSearchTerm = "Khánh Nòi";
+  // console.log("preValue:" + preValue);
   // const state = {};
   // const [state, dispatch] = useStateValue();
   const [{}, dispatch] = useStateValue();
@@ -36,9 +37,10 @@ const Search = (props) => {
 
     dispatch({
       type: actionTypes.SET_SEARCH_TERM,
-      term: input || "Khánh Nòi",
+      term: input || defaultSearchTerm,
     });
-    history.push("/search");
+    history.push(`/search?q=${input == "" ? defaultSearchTerm : input}`);
+    // history.push(`/${input == "" ? defaultSearchTerm : input}`);
   };
   return (
     <>
