@@ -35,7 +35,7 @@ const Home = () => {
             <AppsIcon className="home__headerIcon" />
             {/* avatar */}
             <a
-              href="https://www.facebook.com/khanhnoiIT"
+              href="http://khanhnoi.mobie.in/"
               target="_blank"
               rel="noopener noreferrer"
             >
