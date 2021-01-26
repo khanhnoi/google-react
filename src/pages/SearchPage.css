@@ -107,3 +107,17 @@
 .searchPage__resultTitle {
     text-decoration: none;
 }
+
+@media (max-width: 700px) {
+    .searchPage__logo {
+        margin-top: 10px;
+        height: 36px;
+        margin-right: 20px;
+    }
+    .searchPage__results {
+        margin-left: 20px;
+    }
+    .searchPage__options {
+        display: none;
+    }
+}
